@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+    
+    <body>
+        <div>
+        {{boldmessage}}
+        </div>
+        
+        <div>
+        <img src="{% static "images/Tom.jpg" %}" 
+                alt="picture of Rango" />
+        </div>
+        
+        <div>
+            <img src = "{{MEDIA_URL}}cat.jpg" />
+        </div>
+    </body>
+</html>
+
