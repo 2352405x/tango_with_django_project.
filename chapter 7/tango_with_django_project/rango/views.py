@@ -1,5 +1,5 @@
-from rango.models import Page
 from django.shortcuts import render
+from rango.models import Page
 from rango.models import Category
 from rango.forms import CategoryForm
 from rango.forms import PageForm
@@ -14,7 +14,7 @@ def index(request):
     return render(request, 'rango/index.html', context_dict)
   
 def about(request):
-    context_dict={'boldmessage':"This tutorial has been put together by JING XU"}
+    context_dict={'boldmessage':"This tutorial has been put together by JING XU."}
     return render(request, 'rango/about.html', context=context_dict)
 def show_category(request, category_name_slug):
     
@@ -38,7 +38,10 @@ def add_category(request):
         
         if form.is_valid():
             
-            form.save(commit=True)
+            cat = form.save(commit=True)
+	
+
+	print(cat, cat.slug)
             
             return index(request)
         else:
