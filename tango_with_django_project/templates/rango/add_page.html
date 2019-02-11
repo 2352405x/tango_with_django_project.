@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Rango - Add Page</title>
-    </head>
-    
-        <body>
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+		Add Page
+{% endblock %}
+
+{% block body_block %}
         
-          <div>
+        <div>
                 {% if category %}
             <h1>Add a Page to {{category.name}}</h1>
             
@@ -25,8 +25,7 @@
                 </form>
                 
                         {% else %}
-                                The specified category does not exist!
+                                A category by this name does not exist!
                         {% endif %}
            </div>
-        </body>
-</html>
+{% endblock %}
